@@ -22,7 +22,7 @@ jobs:
         password: ${{ e88d134036f3c687dca212feb9bbc85be7bdfb19 }}
 
     - name: Build Docker image
-      run: docker build -t ardakashutosh05/myapp .
+        run: docker build -t ${{ ardakashutosh05 }}/myapp .
 
-    - name: Push Docker image
-      run: docker push ardakashutosh05/myapp
+      - name: Push Docker image
+        run: docker push ${{ ardakashutosh05 }}/myapp
