@@ -1,13 +1,12 @@
+from flask import Flask
 import psycopg2
 import os
 
-db_host = os.getenv("DB_HOST", "db")
+app = Flask(__name__)
 
-conn = psycopg2.connect(
-    host=db_host,
-    database="mydb",
-    user="admin",
-    password="admin"
-)
+@app.route("/")
+def home():
+    return "🚀 Backend is running!"
 
-print("✅ Connected to DB")
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

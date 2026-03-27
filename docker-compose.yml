@@ -20,5 +20,15 @@ services:
     depends_on:
       - db
 
-volumes:
-  postgres_data:
+    volumes:
+      postgres_data:
+
+
+  nginx:
+  image: nginx:alpine
+  ports:
+    - "80:80"
+  volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  depends_on:
+    - backend    
